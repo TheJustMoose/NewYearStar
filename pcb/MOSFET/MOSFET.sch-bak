@@ -1,0 +1,167 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Transistor_FET:IRLML6402 Q1
+U 1 1 5FF0C54A
+P 2700 1500
+F 0 "Q1" H 2904 1454 50  0000 L CNN
+F 1 "IRLML6402" H 2904 1545 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2900 1425 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml6402pbf.pdf?fileId=5546d462533600a401535668d5c2263c" H 2700 1500 50  0001 L CNN
+	1    2700 1500
+	1    0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:IRLML6402 Q2
+U 1 1 5FF109A4
+P 2700 2250
+F 0 "Q2" H 2904 2204 50  0000 L CNN
+F 1 "IRLML6402" H 2904 2295 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2900 2175 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml6402pbf.pdf?fileId=5546d462533600a401535668d5c2263c" H 2700 2250 50  0001 L CNN
+	1    2700 2250
+	1    0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:IRLML6402 Q3
+U 1 1 5FF124F5
+P 2700 3000
+F 0 "Q3" H 2904 2954 50  0000 L CNN
+F 1 "IRLML6402" H 2904 3045 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2900 2925 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml6402pbf.pdf?fileId=5546d462533600a401535668d5c2263c" H 2700 3000 50  0001 L CNN
+	1    2700 3000
+	1    0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:IRLML6402 Q4
+U 1 1 5FF13ACF
+P 2700 3750
+F 0 "Q4" H 2904 3704 50  0000 L CNN
+F 1 "IRLML6402" H 2904 3795 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2900 3675 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml6402pbf.pdf?fileId=5546d462533600a401535668d5c2263c" H 2700 3750 50  0001 L CNN
+	1    2700 3750
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x04_Male J1
+U 1 1 5FF14F7B
+P 1500 2600
+F 0 "J1" H 1608 2881 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 1375 2300 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1500 2600 50  0001 C CNN
+F 3 "~" H 1500 2600 50  0001 C CNN
+	1    1500 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x04_Male J2
+U 1 1 5FF1627A
+P 3950 2600
+F 0 "J2" H 4025 2850 50  0000 R CNN
+F 1 "Conn_01x04_Male" H 4175 2300 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3950 2600 50  0001 C CNN
+F 3 "~" H 3950 2600 50  0001 C CNN
+	1    3950 2600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0101
+U 1 1 5FF175D0
+P 3000 1000
+F 0 "#PWR0101" H 3000 850 50  0001 C CNN
+F 1 "VCC" H 3015 1173 50  0000 C CNN
+F 2 "" H 3000 1000 50  0001 C CNN
+F 3 "" H 3000 1000 50  0001 C CNN
+	1    3000 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 1000 3000 1300
+Wire Wire Line
+	3000 3550 2800 3550
+Wire Wire Line
+	2800 2800 3000 2800
+Connection ~ 3000 2800
+Wire Wire Line
+	3000 2800 3000 3550
+Wire Wire Line
+	2800 2050 3000 2050
+Connection ~ 3000 2050
+Wire Wire Line
+	3000 2050 3000 2800
+Wire Wire Line
+	2800 1300 3000 1300
+Connection ~ 3000 1300
+Wire Wire Line
+	3000 1300 3000 2050
+Wire Wire Line
+	1700 2600 2500 2600
+Wire Wire Line
+	2500 2600 2500 2250
+Wire Wire Line
+	1700 2700 2500 2700
+Wire Wire Line
+	2500 2700 2500 3000
+Wire Wire Line
+	1700 2500 2375 2500
+Wire Wire Line
+	2375 2500 2375 1500
+Wire Wire Line
+	2375 1500 2500 1500
+Wire Wire Line
+	1700 2800 2375 2800
+Wire Wire Line
+	2375 2800 2375 3750
+Wire Wire Line
+	2375 3750 2500 3750
+Wire Wire Line
+	2800 1700 3525 1700
+Wire Wire Line
+	3525 1700 3525 2500
+Wire Wire Line
+	3525 2500 3750 2500
+Wire Wire Line
+	2800 3950 3525 3950
+Wire Wire Line
+	3525 3950 3525 2800
+Wire Wire Line
+	3525 2800 3750 2800
+Wire Wire Line
+	2800 2450 3350 2450
+Wire Wire Line
+	3350 2450 3350 2600
+Wire Wire Line
+	3350 2600 3750 2600
+Wire Wire Line
+	2800 3200 3350 3200
+Wire Wire Line
+	3350 3200 3350 2700
+Wire Wire Line
+	3350 2700 3750 2700
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 5FF1CAAB
+P 3200 1300
+F 0 "J?" H 3172 1324 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 3172 1233 50  0000 R CNN
+F 2 "" H 3200 1300 50  0001 C CNN
+F 3 "~" H 3200 1300 50  0001 C CNN
+	1    3200 1300
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC

@@ -113,46 +113,38 @@ void BuildV1Frame() {
 }
 
 void BuildV2Frame() {
+  rows[0] = 0;
+  rows[1] = 0;
+  rows[2] = 0;
+  rows[3] = 0;
+
   frame_cnt++;
   if (frame_cnt >= 4) {
     frame_cnt = 0;
-    rows[0] = 0;
-    rows[1] = 0;
-    rows[2] = 0;
     rows[3] = mask;
   } else if (frame_cnt == 1) {
-    rows[0] = 0;
-    rows[1] = 0;
     rows[2] = mask;
-    rows[3] = 0;
   } else if (frame_cnt == 2) {
-    rows[0] = 0;
     rows[1] = mask;
-    rows[2] = 0;
-    rows[3] = 0;
   } else if (frame_cnt == 3) {
     rows[0] = mask;
-    rows[1] = 0;
-    rows[2] = 0;
-    rows[3] = 0;
   }
 }
 
 void BuildV3Frame() {
+  rows[0] = 0;
+  rows[1] = 0;
+  rows[2] = 0;
+  rows[3] = 0;
+
   frame_cnt++;
   if (frame_cnt >= 5) {
     frame_cnt = 0;
-    rows[0] = 0;
-    rows[1] = 0;
-    rows[2] = 0;
     rows[3] = mask;
   } else if (frame_cnt == 1) {
-    rows[0] = 0;
-    rows[1] = 0;
     rows[2] = mask;
     rows[3] = mask;
   } else if (frame_cnt == 2) {
-    rows[0] = 0;
     rows[1] = mask;
     rows[2] = mask;
     rows[3] = mask;
@@ -162,10 +154,31 @@ void BuildV3Frame() {
     rows[2] = mask;
     rows[3] = mask;
   } else if (frame_cnt == 4) {
-    rows[0] = 0;
-    rows[1] = 0;
-    rows[2] = 0;
-    rows[3] = 0;
+  }
+}
+
+void BuildV4Frame() {
+  rows[0] = 0;
+  rows[1] = 0;
+  rows[2] = 0;
+  rows[3] = 0;
+
+  frame_cnt++;
+  if (frame_cnt >= 7) {
+    frame_cnt = 0;
+    rows[3] = mask;
+  } else if (frame_cnt == 1) {
+    rows[2] = mask;
+  } else if (frame_cnt == 2) {
+    rows[1] = mask;
+  } else if (frame_cnt == 3) {
+    rows[0] = mask;
+  } else if (frame_cnt == 4) {
+    rows[1] = mask;
+  } else if (frame_cnt == 5) {
+    rows[2] = mask;
+  } else if (frame_cnt == 6) {
+    rows[3] = mask;
   }
 }
 
@@ -178,12 +191,15 @@ void loop() {
   timer = 0;
 
   build_cnt++;
-  if (build_cnt < 40)
+  const int k = 40;
+  if (build_cnt < k)
     BuildV1Frame();
-  else if (build_cnt < 80)
+  else if (build_cnt < 2*k)
     BuildV2Frame();
-  else if (build_cnt < 120)
+  else if (build_cnt < 3*k)
     BuildV3Frame();
+  else if (build_cnt < 4*k)
+    BuildV4Frame();
   else
     build_cnt = 0;
 }

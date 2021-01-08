@@ -17,6 +17,13 @@ const int ROW4_BIT = 7;
 #define ROW_DIR DDRD
 #define ROW_PORT PORTD
 
+const uint16_t mask = 0x7FFF;
+
+uint16_t rows[4];
+int timer = 0;
+int frame_cnt = 0;
+int build_cnt = 0;
+
 void OutRow(uint16_t data) {
   for (uint8_t i = 0; i < 16; i++) {
     if (data & 0x8000)
@@ -72,11 +79,6 @@ void SetRows(uint8_t mask) {
     bitSet(ROW_PORT, ROW4_BIT);
 }
 
-uint16_t rows[4];
-int timer = 0;
-int frame_cnt = 0;
-int build_cnt = 0;
-
 void OutFrame() {
   OutRow(rows[0]); SetRows(1); LatchIt();
   delay(1);
@@ -88,25 +90,26 @@ void OutFrame() {
   delay(1);
 }
 
+// 15   14 13 12 11 10  9  8  7  6  5  4  3  2  1  0
+//  0    0  0  0  0  1  0  0  0  0  1  0  0  0  0  1
+//  0    0  0  0  1  0  0  0  0  1  0  0  0  0  1  0
+//  0    0  0  1  0  0  0  0  1  0  0  0  0  1  0  0
+//  0    0  1  0  0  0  0  1  0  0  0  0  1  0  0  0
+//  0    1  0  0  0  0  1  0  0  0  0  1  0  0  0  0
+//  0    0  0  0  0  1  0  0  0  0  1  0  0  0  0  1
+
 void BuildV1Frame() {
   frame_cnt++;
-  if (frame_cnt >= 3) {
+  if (frame_cnt >= 5)
     frame_cnt = 0;
-    rows[0] = 1;
-    rows[1] = 1;
-    rows[2] = 1;
-    rows[3] = 1;
-  } else if (frame_cnt == 1) {
-    rows[0] = 2;
-    rows[1] = 2;
-    rows[2] = 2;
-    rows[3] = 2;
-  } else if (frame_cnt == 2) {
-    rows[0] = 4;
-    rows[1] = 4;
-    rows[2] = 4;
-    rows[3] = 4;
-  }
+
+  uint16_t row = 0x421;
+  row <<= frame_cnt;
+
+  rows[0] = row;
+  rows[1] = row;
+  rows[2] = row;
+  rows[3] = row;
 }
 
 void BuildV2Frame() {
@@ -116,19 +119,19 @@ void BuildV2Frame() {
     rows[0] = 0;
     rows[1] = 0;
     rows[2] = 0;
-    rows[3] = 7;
+    rows[3] = mask;
   } else if (frame_cnt == 1) {
     rows[0] = 0;
     rows[1] = 0;
-    rows[2] = 7;
+    rows[2] = mask;
     rows[3] = 0;
   } else if (frame_cnt == 2) {
     rows[0] = 0;
-    rows[1] = 7;
+    rows[1] = mask;
     rows[2] = 0;
     rows[3] = 0;
   } else if (frame_cnt == 3) {
-    rows[0] = 7;
+    rows[0] = mask;
     rows[1] = 0;
     rows[2] = 0;
     rows[3] = 0;
@@ -142,22 +145,22 @@ void BuildV3Frame() {
     rows[0] = 0;
     rows[1] = 0;
     rows[2] = 0;
-    rows[3] = 7;
+    rows[3] = mask;
   } else if (frame_cnt == 1) {
     rows[0] = 0;
     rows[1] = 0;
-    rows[2] = 7;
-    rows[3] = 7;
+    rows[2] = mask;
+    rows[3] = mask;
   } else if (frame_cnt == 2) {
     rows[0] = 0;
-    rows[1] = 7;
-    rows[2] = 7;
-    rows[3] = 7;
+    rows[1] = mask;
+    rows[2] = mask;
+    rows[3] = mask;
   } else if (frame_cnt == 3) {
-    rows[0] = 7;
-    rows[1] = 7;
-    rows[2] = 7;
-    rows[3] = 7;
+    rows[0] = mask;
+    rows[1] = mask;
+    rows[2] = mask;
+    rows[3] = mask;
   } else if (frame_cnt == 4) {
     rows[0] = 0;
     rows[1] = 0;
@@ -169,7 +172,7 @@ void BuildV3Frame() {
 void loop() {
   OutFrame();
   timer++;
-  if (timer < 100)
+  if (timer < 50)
     return;
 
   timer = 0;

@@ -1,8 +1,8 @@
 
 // columns
 // TPIC6C595 ctrl
-const int REG_DATA_BIT  = 4;  // pin 2 of TPIC6C595
-const int REG_CLK_BIT   = 5;  // pin 15 of TPIC6C595
+const int REG_DATA_BIT  = 5;  // pin 2 of TPIC6C595
+const int REG_CLK_BIT   = 4;  // pin 15 of TPIC6C595
 const int REG_LATCH_BIT = 3;  // pin 10 of TPIC6C595
 
 #define REG_DIR DDRB
@@ -105,7 +105,6 @@ void BuildV1Frame() {
 
   uint16_t row = 0x421;
   row <<= frame_cnt;
-
   rows[0] = row;
   rows[1] = row;
   rows[2] = row;

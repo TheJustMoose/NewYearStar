@@ -218,13 +218,13 @@ F 3 "" H 3500 3400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text Label 3425 3100 0    50   ~ 0
-12
+13
 Wire Wire Line
 	3800 3100 3400 3100
 Wire Wire Line
 	3800 3300 3150 3300
 Text Label 2750 3300 0    50   ~ 0
-13
+12
 Wire Wire Line
 	3800 5050 3150 5050
 Wire Wire Line

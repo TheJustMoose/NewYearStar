@@ -218,13 +218,13 @@ F 3 "" H 3500 3400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text Label 3425 3100 0    50   ~ 0
-12
+13
 Wire Wire Line
 	3800 3100 3400 3100
 Wire Wire Line
 	3800 3300 3150 3300
 Text Label 2750 3300 0    50   ~ 0
-13
+12
 Wire Wire Line
 	3800 5050 3150 5050
 Wire Wire Line
@@ -680,6 +680,72 @@ F 1 "GND" H 8930 5077 50  0000 C CNN
 F 2 "" H 8925 5250 50  0001 C CNN
 F 3 "" H 8925 5250 50  0001 C CNN
 	1    8925 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5FFB46E8
+P 8500 1500
+F 0 "H1" H 8600 1546 50  0000 L CNN
+F 1 "MountingHole" H 8600 1455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 8500 1500 50  0001 C CNN
+F 3 "~" H 8500 1500 50  0001 C CNN
+	1    8500 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5FFB5433
+P 8500 2000
+F 0 "H2" H 8600 2046 50  0000 L CNN
+F 1 "MountingHole" H 8600 1955 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 8500 2000 50  0001 C CNN
+F 3 "~" H 8500 2000 50  0001 C CNN
+	1    8500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5FFCCF1D
+P 8500 2500
+F 0 "H3" H 8600 2546 50  0000 L CNN
+F 1 "MountingHole" H 8600 2455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 8500 2500 50  0001 C CNN
+F 3 "~" H 8500 2500 50  0001 C CNN
+	1    8500 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5FFE3C58
+P 8500 3000
+F 0 "H4" H 8600 3046 50  0000 L CNN
+F 1 "MountingHole" H 8600 2955 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 8500 3000 50  0001 C CNN
+F 3 "~" H 8500 3000 50  0001 C CNN
+	1    8500 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H5
+U 1 1 5FFF9599
+P 8500 3500
+F 0 "H5" H 8600 3546 50  0000 L CNN
+F 1 "MountingHole" H 8600 3455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 8500 3500 50  0001 C CNN
+F 3 "~" H 8500 3500 50  0001 C CNN
+	1    8500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H6
+U 1 1 60001DB2
+P 9775 1550
+F 0 "H6" H 9875 1599 50  0000 L CNN
+F 1 "MountingHole_Pad" H 9875 1508 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 9775 1550 50  0001 C CNN
+F 3 "~" H 9775 1550 50  0001 C CNN
+	1    9775 1550
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

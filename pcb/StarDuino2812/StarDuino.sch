@@ -2747,4 +2747,15 @@ Wire Wire Line
 	3525 6150 3150 6150
 Wire Wire Line
 	3525 6250 3100 6250
+$Comp
+L Mechanical:MountingHole H5
+U 1 1 601A7A2A
+P 10850 7225
+F 0 "H5" H 10950 7271 50  0000 L CNN
+F 1 "MountingHole" H 10950 7180 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm" H 10850 7225 50  0001 C CNN
+F 3 "~" H 10850 7225 50  0001 C CNN
+	1    10850 7225
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

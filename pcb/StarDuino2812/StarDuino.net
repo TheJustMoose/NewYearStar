@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source C:\PROJECT\github\NewYearStar\pcb\StarDuino2812\StarDuino.sch)
-    (date "27/01/2021 22:35:04")
+    (date "02/02/2021 21:51:44")
     (tool "Eeschema (5.1.8)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -539,7 +539,14 @@
       (datasheet ~)
       (libsource (lib Connector) (part Conn_01x03_Male) (description "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"))
       (sheetpath (names /) (tstamps /))
-      (tstamp 60414868)))
+      (tstamp 60414868))
+    (comp (ref H5)
+      (value MountingHole)
+      (footprint MountingHole:MountingHole_2.5mm)
+      (datasheet ~)
+      (libsource (lib Mechanical) (part MountingHole) (description "Mounting Hole without connection"))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 601A7A2A)))
   (libparts
     (libpart (lib Connector) (part Conn_01x03_Male)
       (description "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")

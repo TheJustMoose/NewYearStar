@@ -2733,12 +2733,12 @@ RX
 Text Label 3275 6250 0    50   ~ 0
 TX
 $Comp
-L Connector:Conn_01x03_Male J?
+L Connector:Conn_01x03_Male J2
 U 1 1 60414868
 P 3725 6150
-F 0 "J?" H 3697 6174 50  0000 R CNN
+F 0 "J2" H 3697 6174 50  0000 R CNN
 F 1 "Conn_01x03_Male" H 3697 6083 50  0000 R CNN
-F 2 "" H 3725 6150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3725 6150 50  0001 C CNN
 F 3 "~" H 3725 6150 50  0001 C CNN
 	1    3725 6150
 	-1   0    0    -1  
@@ -2747,4 +2747,15 @@ Wire Wire Line
 	3525 6150 3150 6150
 Wire Wire Line
 	3525 6250 3100 6250
+$Comp
+L Mechanical:MountingHole H?
+U 1 1 601A7A2A
+P 10850 7225
+F 0 "H?" H 10950 7271 50  0000 L CNN
+F 1 "MountingHole" H 10950 7180 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm" H 10850 7225 50  0001 C CNN
+F 3 "~" H 10850 7225 50  0001 C CNN
+	1    10850 7225
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

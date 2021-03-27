@@ -5,7 +5,7 @@
 
 typedef unsigned int uint;
 
-const uint MAX_BRIGHTNESS = 15;
+const uint MAX_BRIGHTNESS = 30;
 
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
@@ -24,17 +24,17 @@ void rgb_all(uint r, uint g, uint b) {
 void blink_rgb() {
   for (uint i = 0; i < MAX_BRIGHTNESS + 1; i++) {
     rgb_all(0, i, MAX_BRIGHTNESS - i);
-    delay(20);
+    delay(60);
   }
 
   for (uint i = 0; i < MAX_BRIGHTNESS + 1; i++) {
     rgb_all(i, MAX_BRIGHTNESS - i, 0);
-    delay(20);
+    delay(60);
   }
   
   for (uint i = 0; i < MAX_BRIGHTNESS + 1; i++) {
     rgb_all(MAX_BRIGHTNESS - i, 0, i);
-    delay(20);
+    delay(60);
   }
 }
 
@@ -47,31 +47,56 @@ void set_row(uint row, uint r, uint g, uint b) {
   }
 }
 
-void white_wave() {
-  uint max = MAX_BRIGHTNESS;
-  for (uint i = 0; i < 4; i++) {
+void set_col(uint col, uint r, uint g, uint b) {
+  uint p1 = col / 3;
+  uint p2 = 2 - (col % 3);
+  uint base = p2 + p1*12;
+  pixels.setPixelColor(base + 0, r, g, b);
+  pixels.setPixelColor(base + 3, r, g, b);
+  pixels.setPixelColor(base + 6, r, g, b);
+  pixels.setPixelColor(base + 9, r, g, b);
+}
+
+void center_wave() {
+  const uint steps = 8;
+  uint vals[4*steps] = {40, 0, 0, 0,   // step 0
+                        25, 40, 0, 0,  // step 1
+                        15, 25, 40, 0, // step 2
+                        5, 15, 25, 40, // step 3
+                        0, 5, 15, 40,  // step 4
+                        0, 0, 5, 40,   // step 5
+                        0, 0, 0, 40,   // step 6
+                        0, 0, 0, 0};   // step 7
+  for (uint s = 0; s < steps; s++) {
     pixels.clear();
-    set_row(i, max, max, max);
-    Serial.print(i);
-    Serial.print(" ");
-    Serial.println(max);
-    if (i > 0)
-      for (int j = i - 1; j >= 0; j--) {
-        uint fade = max / (2*(i - j) + 1);
-        set_row(j, fade, fade, fade);
-        Serial.print(j);
-        Serial.print(" ");
-        Serial.println(fade);
-      }
-    Serial.println("-----");
+    for (uint i = 0; i < 4; i++) {
+      uint b = s*4;
+      set_row(i, vals[b + i], vals[b + i], vals[b + i]);
+    }
+    pixels.show();
+    delay(100);
+  }
+}
+
+void round_wave() {
+  for (uint s = 0; s < 15; s++) {
+    pixels.clear();
+    for (uint i = 0; i < 15; i++) {
+      uint bri = (i + 15 - s) % 15;
+      bri *= 2;
+      set_col(i, bri, bri, bri);
+    }
     pixels.show();
     delay(100);
   }
 }
 
 void loop() {
-  //for (int i = 0; i < 50; i++)
-  //  blink_rgb();
-  for (int i = 0; i < 50; i++)
-    white_wave();
+  for (int i = 0; i < 30; i++)
+    blink_rgb();
+  for (int i = 0; i < 30; i++)
+    round_wave();
+  for (int i = 0; i < 30; i++)
+    center_wave();
 }
+//

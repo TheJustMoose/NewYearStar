@@ -219,17 +219,6 @@ $EndComp
 Text Notes 1775 7525 0    50   ~ 0
 Reverse\npolarity\nprotection
 $Comp
-L Mechanical:MountingHole H1
-U 1 1 6027D2D2
-P 10850 5575
-F 0 "H1" H 10950 5621 50  0000 L CNN
-F 1 "MountingHole" H 10950 5530 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 10850 5575 50  0001 C CNN
-F 3 "~" H 10850 5575 50  0001 C CNN
-	1    10850 5575
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:VCC #PWR097
 U 1 1 601650A0
 P 5300 14950
@@ -2573,39 +2562,6 @@ Wire Wire Line
 	9350 16000 5000 16000
 Wire Wire Line
 	5000 16000 5000 16750
-$Comp
-L Mechanical:MountingHole H2
-U 1 1 60124CA1
-P 10850 5975
-F 0 "H2" H 10950 6021 50  0000 L CNN
-F 1 "MountingHole" H 10950 5930 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 10850 5975 50  0001 C CNN
-F 3 "~" H 10850 5975 50  0001 C CNN
-	1    10850 5975
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H3
-U 1 1 60125FF8
-P 10850 6375
-F 0 "H3" H 10950 6421 50  0000 L CNN
-F 1 "MountingHole" H 10950 6330 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 10850 6375 50  0001 C CNN
-F 3 "~" H 10850 6375 50  0001 C CNN
-	1    10850 6375
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H4
-U 1 1 601346AF
-P 10850 6800
-F 0 "H4" H 10950 6846 50  0000 L CNN
-F 1 "MountingHole" H 10950 6755 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 10850 6800 50  0001 C CNN
-F 3 "~" H 10850 6800 50  0001 C CNN
-	1    10850 6800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2950 4950 3250 4950
 $Comp
@@ -2726,8 +2682,6 @@ Wire Wire Line
 	3100 6050 3100 6250
 Text Label 3275 6050 0    50   ~ 0
 ~Reset
-Wire Wire Line
-	3200 6050 3525 6050
 Text Label 3275 6150 0    50   ~ 0
 RX
 Text Label 3275 6250 0    50   ~ 0
@@ -2735,12 +2689,12 @@ TX
 $Comp
 L Connector:Conn_01x03_Male J2
 U 1 1 60414868
-P 3725 6150
-F 0 "J2" H 3697 6174 50  0000 R CNN
-F 1 "Conn_01x03_Male" H 3697 6083 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3725 6150 50  0001 C CNN
-F 3 "~" H 3725 6150 50  0001 C CNN
-	1    3725 6150
+P 4350 6150
+F 0 "J2" H 4322 6174 50  0000 R CNN
+F 1 "Conn_01x03_Male" H 4675 5950 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4350 6150 50  0001 C CNN
+F 3 "~" H 4350 6150 50  0001 C CNN
+	1    4350 6150
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
@@ -2748,14 +2702,180 @@ Wire Wire Line
 Wire Wire Line
 	3525 6250 3100 6250
 $Comp
-L Mechanical:MountingHole H?
-U 1 1 601A7A2A
-P 10850 7225
-F 0 "H?" H 10950 7271 50  0000 L CNN
-F 1 "MountingHole" H 10950 7180 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 10850 7225 50  0001 C CNN
-F 3 "~" H 10850 7225 50  0001 C CNN
-	1    10850 7225
+L Device:R R4
+U 1 1 606499DB
+P 3675 6250
+F 0 "R4" V 3625 6075 50  0000 C CNN
+F 1 "1k" V 3675 6250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3605 6250 50  0001 C CNN
+F 3 "~" H 3675 6250 50  0001 C CNN
+	1    3675 6250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 6064AD4D
+P 3675 6150
+F 0 "R3" V 3625 5975 50  0000 C CNN
+F 1 "1k" V 3675 6150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 3605 6150 50  0001 C CNN
+F 3 "~" H 3675 6150 50  0001 C CNN
+	1    3675 6150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 6064C37E
+P 3875 6050
+F 0 "C5" V 3825 5950 50  0000 C CNN
+F 1 "0.1uF" V 3825 6225 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3913 5900 50  0001 C CNN
+F 3 "~" H 3875 6050 50  0001 C CNN
+	1    3875 6050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3200 6050 3725 6050
+Wire Wire Line
+	3825 6150 4150 6150
+Wire Wire Line
+	3825 6250 4150 6250
+Wire Wire Line
+	4025 6050 4150 6050
+NoConn ~ 1750 4250
+NoConn ~ 1750 4450
+NoConn ~ 1750 4550
+NoConn ~ 2950 4250
+NoConn ~ 2950 4350
+NoConn ~ 2950 4450
+NoConn ~ 2950 4550
+NoConn ~ 2950 4650
+NoConn ~ 2950 4750
+NoConn ~ 2950 5150
+NoConn ~ 2950 5350
+NoConn ~ 2950 5450
+NoConn ~ 2950 5550
+NoConn ~ 2950 5650
+NoConn ~ 2950 6150
+NoConn ~ 2950 6250
+NoConn ~ 2950 6350
+NoConn ~ 2950 6450
+NoConn ~ 2950 6550
+NoConn ~ 2950 6650
+NoConn ~ 9350 18750
+$Comp
+L Mechanical:MountingHole_Pad H6
+U 1 1 60810FD8
+P 12250 5550
+F 0 "H6" H 12350 5599 50  0000 L CNN
+F 1 "MountingHole_Pad" H 12350 5508 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 12250 5550 50  0001 C CNN
+F 3 "~" H 12250 5550 50  0001 C CNN
+	1    12250 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H7
+U 1 1 60812577
+P 12250 6050
+F 0 "H7" H 12350 6099 50  0000 L CNN
+F 1 "MountingHole_Pad" H 12350 6008 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 12250 6050 50  0001 C CNN
+F 3 "~" H 12250 6050 50  0001 C CNN
+	1    12250 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H8
+U 1 1 60812E0D
+P 12250 6550
+F 0 "H8" H 12350 6599 50  0000 L CNN
+F 1 "MountingHole_Pad" H 12350 6508 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 12250 6550 50  0001 C CNN
+F 3 "~" H 12250 6550 50  0001 C CNN
+	1    12250 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H9
+U 1 1 608149CE
+P 12250 7050
+F 0 "H9" H 12350 7099 50  0000 L CNN
+F 1 "MountingHole_Pad" H 12350 7008 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 12250 7050 50  0001 C CNN
+F 3 "~" H 12250 7050 50  0001 C CNN
+	1    12250 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H10
+U 1 1 60814E06
+P 12250 7550
+F 0 "H10" H 12350 7599 50  0000 L CNN
+F 1 "MountingHole_Pad" H 12350 7508 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 12250 7550 50  0001 C CNN
+F 3 "~" H 12250 7550 50  0001 C CNN
+	1    12250 7550
+	1    0    0    -1  
+$EndComp
+NoConn ~ 12250 5650
+NoConn ~ 12250 6150
+NoConn ~ 12250 6650
+NoConn ~ 12250 7150
+NoConn ~ 12250 7650
+$Comp
+L Device:CP C6
+U 1 1 6094EE0B
+P 3000 7900
+F 0 "C6" H 3118 7946 50  0000 L CNN
+F 1 "470uF" H 3118 7855 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Axial_L20.0mm_D10.0mm_P26.00mm_Horizontal" H 3038 7750 50  0001 C CNN
+F 3 "~" H 3000 7900 50  0001 C CNN
+	1    3000 7900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0129
+U 1 1 60950781
+P 3000 7750
+F 0 "#PWR0129" H 3000 7600 50  0001 C CNN
+F 1 "VCC" H 3015 7923 50  0000 C CNN
+F 2 "" H 3000 7750 50  0001 C CNN
+F 3 "" H 3000 7750 50  0001 C CNN
+	1    3000 7750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0134
+U 1 1 60951E6F
+P 3000 8050
+F 0 "#PWR0134" H 3000 7800 50  0001 C CNN
+F 1 "GND" H 3005 7877 50  0000 C CNN
+F 2 "" H 3000 8050 50  0001 C CNN
+F 3 "" H 3000 8050 50  0001 C CNN
+	1    3000 8050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 609AFD54
+P 4350 6700
+F 0 "J?" H 4322 6724 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 4675 6850 50  0000 R CNN
+F 2 "" H 4350 6700 50  0001 C CNN
+F 3 "~" H 4350 6700 50  0001 C CNN
+	1    4350 6700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 609DAEB4
+P 4150 6700
+F 0 "#PWR?" H 4150 6450 50  0001 C CNN
+F 1 "GND" H 4155 6527 50  0000 C CNN
+F 2 "" H 4150 6700 50  0001 C CNN
+F 3 "" H 4150 6700 50  0001 C CNN
+	1    4150 6700
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

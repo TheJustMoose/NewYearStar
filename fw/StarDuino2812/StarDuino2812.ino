@@ -91,12 +91,39 @@ void round_wave() {
   }
 }
 
+void red_fade() {
+  for (uint i = 3; i < MAX_BRIGHTNESS; i++) {
+    rgb_all(i, 0, 0);
+    delay(50);
+  }
+  delay(100);
+  for (uint i = 3; i < MAX_BRIGHTNESS; i++) {
+    rgb_all(MAX_BRIGHTNESS - i, 0, 0);
+    delay(40);
+  }
+  delay(150);
+}
+
+void res_lights() {
+  for (uint i = 0; i < 4; i++) {
+    pixels.clear();
+    set_row(i, 30, 0, 0);
+    pixels.show();
+    delay(300);
+  }
+}
+
 void loop() {
-  for (int i = 0; i < 30; i++)
+  const uint repeat = 20;
+  for (uint i = 0; i < repeat; i++)
+    res_lights();
+  for (uint i = 0; i < repeat; i++)
+    red_fade();
+  for (uint i = 0; i < repeat; i++)
     blink_rgb();
-  for (int i = 0; i < 30; i++)
+  for (uint i = 0; i < repeat; i++)
     round_wave();
-  for (int i = 0; i < 30; i++)
+  for (uint i = 0; i < repeat; i++)
     center_wave();
 }
 //

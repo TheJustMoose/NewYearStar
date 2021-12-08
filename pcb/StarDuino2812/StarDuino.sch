@@ -2748,9 +2748,6 @@ NoConn ~ 1750 4550
 NoConn ~ 2950 4250
 NoConn ~ 2950 4350
 NoConn ~ 2950 4450
-NoConn ~ 2950 4550
-NoConn ~ 2950 4650
-NoConn ~ 2950 4750
 NoConn ~ 2950 5150
 NoConn ~ 2950 5350
 NoConn ~ 2950 5450
@@ -3201,5 +3198,44 @@ F 2 "" H 13500 14050 50  0001 C CNN
 F 3 "" H 13500 14050 50  0001 C CNN
 	1    13500 14050
 	1    0    0    -1  
+$EndComp
+Text Label 2950 4650 0    50   ~ 0
+MISO
+Text Label 2950 4750 0    50   ~ 0
+SCK
+Text Label 2950 4550 0    50   ~ 0
+MOSI
+$Comp
+L Connector:Conn_01x01_Male J6
+U 1 1 61B3A953
+P 3150 4750
+F 0 "J6" H 3122 4774 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 3000 4775 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3150 4750 50  0001 C CNN
+F 3 "~" H 3150 4750 50  0001 C CNN
+	1    3150 4750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J5
+U 1 1 61B6491A
+P 3150 4650
+F 0 "J5" H 3122 4674 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 3000 4675 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3150 4650 50  0001 C CNN
+F 3 "~" H 3150 4650 50  0001 C CNN
+	1    3150 4650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J4
+U 1 1 61B64C04
+P 3150 4550
+F 0 "J4" H 3122 4574 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 3000 4575 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3150 4550 50  0001 C CNN
+F 3 "~" H 3150 4550 50  0001 C CNN
+	1    3150 4550
+	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC
